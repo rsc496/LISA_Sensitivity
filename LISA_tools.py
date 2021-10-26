@@ -169,7 +169,7 @@ def get_A(f, M, eta, Mc, Dl):
 	return A
 
 def get_Dl(z, Omega_m, H0):
-    """ calculate luminosity distance in geometrized units """
+    """ calculate luminosity distance in geometrized units (in seconds) """
     # see http://arxiv.org/pdf/1111.6396v1.pdf
     x0 = (1. - Omega_m)/Omega_m
     xZ = x0/(1. + z)**3
@@ -184,7 +184,7 @@ def get_Dl(z, Omega_m, H0):
 
 
 def get_z(z, Dl, Omega_m, H0):
-    """ calculate redishift uisng root finder """
+    """ calculate redishift uisng root finder. Dl is entered in seconds """
     return get_Dl(z, Omega_m, H0) - Dl
     
 def get_h_char_track(f, f_start, f_end, M, eta, M_chirp, Dl, constants):
